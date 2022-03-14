@@ -1,0 +1,3 @@
+algorithme debut variable reel booleen entier si ecrire sinon fin lire caractere declaration entrer alors finsi
+' " > + < ; { } ( )
+.

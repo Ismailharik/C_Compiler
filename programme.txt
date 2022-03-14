@@ -1,0 +1,6 @@
+algorithme
+debut :
+declaration
+variable c caractere ;
+c := 'B' ; 
+ecrire ( c ) ;
