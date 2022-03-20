@@ -27,12 +27,10 @@ void interpretation(Element *tmpProg){
 		}
 		else if(tmpProg->next!=NULL){	//  si tmpProg->next == null ,tmpProg->next->data va planter le prog
 			if(strcmp(tmpProg->next->data,":=")==0){
-			
 				affectationSimple(tmpProg);	
 			}	
 		}
 		 if(strcmp(tmpProg->data,"si")==0){
-		
 			tmpProg = Si(tmpProg);	//J'AI MIS SI ICI CAR JE DOIS TESTER LA VAL DU VAR x avec la val du var y , si ( x > y ) exmple
 		}
 		
@@ -99,7 +97,7 @@ bool LireAffectation(Element *tmpProg){
 	while(tmpChar!=NULL){fflush(stdin);
 		
 			if(tmpProg->next->next->data[0] == tmpChar->nom ){	//
-				printf("\nADMINE MESSAGE ENTER VALUE FOR %c\t",tmpChar->nom) ; // retour a la ligne dans terminal tjr avant q'il lire une valeur apartir du terminal
+				printf("\n ENTER VALUE FOR %c\t",tmpChar->nom) ; // retour a la ligne dans terminal tjr avant q'il lire une valeur apartir du terminal
 				scanf("%c",&tmpChar->valeur);
 			//	printf("\nThe ACTUAL VALUE IS OF %c IS \t %c",tmpChar->nom,tmpChar->valeur);
 				return true;
@@ -110,7 +108,7 @@ bool LireAffectation(Element *tmpProg){
 	
 	while(tmpInt){
 				if(tmpProg->next->next->data[0] == tmpInt->nom ){
-					printf("\nADMINE MESSAGE ENTER VALUE FOR %c\t",tmpInt->nom ); // retour a la ligne dans terminal tjr avant q'il lire une valeur apartir du terminal
+					printf("\nENTER VALUE FOR %c\t",tmpInt->nom ); // retour a la ligne dans terminal tjr avant q'il lire une valeur apartir du terminal
 					 scanf("%d",&tmpInt->valeur);
 				//	 printf("\nTHE ACTUAL VALUE OF %c IS %d",tmpInt->nom,tmpInt->valeur);
 					return true;
@@ -129,7 +127,7 @@ bool affectationSimple(Element * tmpProg){
 	while(tmpChar!=NULL){						//tmp->next : dat[0]= ' , data[1] = valeur , data[2] = '
 		if(tmpChar->nom == tmpProg->data[0]){
 			tmpChar->valeur =tmpProg->next->next->data[1] ;
-			printf("\nThe ACTUAL VALUE  OF %c IS \t %c",tmpChar->nom,tmpChar->valeur);
+		//	printf("\nThe ACTUAL VALUE  OF %c IS \t %c",tmpChar->nom,tmpChar->valeur);
 			return 1;
 		}
 	tmpChar = tmpChar->next;
@@ -138,7 +136,7 @@ bool affectationSimple(Element * tmpProg){
 	while(tmpInt!=NULL){
 		if(tmpProg->data[0]==tmpInt->nom){
 			tmpInt->valeur = ChartoIntiger(tmpProg->next->next->data);
-			printf("\nTHE ACTUAL VALUE OF %c IS %d",tmpInt->nom,tmpInt->valeur);	
+		//	printf("\nTHE ACTUAL VALUE OF %c IS %d",tmpInt->nom,tmpInt->valeur);	
 			return 1;							
 		}
 	tmpInt = tmpInt->next;
@@ -152,14 +150,14 @@ bool ecrireAffectation(Element * tmpProg){
 	ElementChar *tmpChar=ListOfCharactere;
 	ElementInt *tmpInt =ListOfEntier;
 	while(tmpChar){
-		if(tmpProg->next->next->data[1] == tmpChar->nom ){	
+		
+		if(tmpProg->next->next->data[0] == tmpChar->nom ){	
 			printf("\nThe ACTUAL VALUE IS OF %c IS \t %c",tmpChar->nom,tmpChar->valeur);
 			return true;
 		}											
 	tmpChar= tmpChar->next;
 	}
 	while(tmpInt){
-	
 		if(tmpProg->next->next->data[0] == tmpInt->nom ){
 			printf("\nTHE ACTUAL VALUE OF %c IS %d",tmpInt->nom,tmpInt->valeur);
 			return true;
@@ -181,7 +179,7 @@ Element * Si(Element * tmpProg){		//JE VAIS TRAVAILLER COMME J'AI SI ( X > Y )
 	int xValue=0;
 	int yValue=0 ;
 				//Je vais chercher la val de x dans les listes des variables(lest des entiers et list des caracteres) stocké
-	//printf("\n %c %c %c",x,operateur,y);
+//	printf("\nFROM SI %c %c %c",x,operateur,y);
 		while (tmpChar){
 			if(tmpChar->nom == x){
 			xValue = tmpChar->valeur;
@@ -217,7 +215,7 @@ Element * Si(Element * tmpProg){		//JE VAIS TRAVAILLER COMME J'AI SI ( X > Y )
 		if(operateur =='>')	{
 			if( xValue > yValue){
 				
-				//printf("\nTRUE %c %c %c",x,operateur,y);
+			//	printf("\nTRUE %c %c %c",x,operateur,y);
 			
 			tmpProg =interpretationInnerSi(tmpProg);		
 			if(tmpProg->data[0]==';'){
@@ -276,7 +274,7 @@ Element * Si(Element * tmpProg){		//JE VAIS TRAVAILLER COMME J'AI SI ( X > Y )
 			}		
 			
 			}else{
-		//		printf("\nFALSE %c < %c",x,y);
+			//	printf("\nFALSE %c < %c",x,y);
 				while(tmpProg->data[0]!=';' &&strcmp(tmpProg->data,"sinon")!=0){
 					tmpProg = tmpProg->next;
 				}

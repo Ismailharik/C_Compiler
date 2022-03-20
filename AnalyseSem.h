@@ -26,7 +26,7 @@ return 0;     //lE PROGRAMME ARRIVE A LA FIN SEULEMENT DANS LE CAS OU LE VAR N'E
 							//****************************************
 
 int AnalyseSem(Element *localFile ){ 
-//	printf("\nFROM ANAL SEM");
+//	printf("\nFROM ANAL SEM ");
 if(strcmp(localFile->data,"variable")==0)		//pour les declarations
 {
 	char   *type=localFile->next->next->data,
@@ -56,8 +56,8 @@ if(strcmp(localFile->data,"variable")==0)		//pour les declarations
 		}
 	}
 }
-else{		//POUR LES AFFECTATION
-		
+else if(strcmp(localFile->data,"ecrire")==0){		//POUR LES AFFECTATION
+		printf("ddddddddddddddddddddddddd");
 		if(!CheckIfNameOfVarExisted(localFile->data[0])){
 			printf("\nErreur Sem : %c Undeclared",localFile->data[0]);
 			return 2; // ce var undeclared

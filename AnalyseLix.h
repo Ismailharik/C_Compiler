@@ -26,11 +26,14 @@ while(L1!=NULL){
         if(comparerList(L1->data)){		// LA FCT comparerList prend dans l'entrer une chaine et la chercher dans le dictionnaire , s'il exist la fct return 1 sinon 0
             //printf("\n |%s| existed voir ligne %d",L1->data, L1->ligne);
             maFile = emFiler(maFile, L1->ligne,L1->data); 	//maFile EST UNE FILE QUI STOCK UN LIGNE ET LEUR EMPLACEMENT
-            if(detectLigne+2<=L1->ligne  ){	//comme ca je savoir s'il y a un saut de ligne
+            if(strcmp(L1->data,"algorithme")==0||strcmp(L1->data,"debut")==0 || strcmp(L1->data,"declaration")==0){
+            	maFile = NULL;
+			}
+			if(L1->data[0]== ';')  {	//comme ca je savoir s'il y a un saut de ligne
                 //detectLigne++;				//JE DOIS l'AUGMENTER PAR 1, POUR QUI'IL RESTE TOUJOURS INFERIEUR A LA LIGNE ACTUEUL PAR 1
                detectLigne = L1->ligne -1;
-			   // afficher(maFile);
-                
+			    //afficher(maFile);
+           
 				tmpSyntaxique =AnalyseSyn(maFile);	//APRES QUI'IL SE TERMINE CHAQUE LIGNE JE LE PASSE AU TRAITEMENT DE L'ANALYSE SYNTAXIQUE
                 
                 if(strcmp(maFile->data,"variable")==0){		//APRES QUE JE FINI LE TRAITEMNT DE L'ANALUSE SYNTAXIQUE , JE PASSE CE LIGNE AU TRAITEMENT DE L'ANALYSE SEMANTIQUE
@@ -123,8 +126,6 @@ restart:
 		}
    }
   	//FIN TRAITEMENT DES COMMENTAIRES
-  	
-  	// Lating our programme showing ecrire ( " efrgrgbbg " ) ;
   if(c1=='.') break;
  if(c1=='\n'){
         ligneP++;
@@ -152,7 +153,6 @@ restart:
 	else{
     mot[i++]=c1;
     } 
-    
 }
 return Debut;
 

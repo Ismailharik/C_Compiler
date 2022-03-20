@@ -17,14 +17,14 @@ ElementChar *ListOfCharactere = NULL;
 int main(int *Ligne, char **argv ){
 	
 	if(	analyser_lix()){
-		printf("\n ANALYSE LIX-SYN-SEM SUCCES");
+	//	printf("\n ANALYSE LIX-SYN-SEM SUCCES");
 		interpretation(ProgList);
 	}else{
 	printf("\n CORRIGER VOS ERROR ON PEUT PAS PASSER A L'INTERPRETATION'");
 	}
 	
 	printf("\n***********FIN***************");
-///afficher(ProgList);
+	//afficher(ProgList);
 return 0;
 }
 

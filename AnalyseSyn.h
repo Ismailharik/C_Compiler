@@ -179,10 +179,10 @@ int Analyse_Syn_ecrire(Element * localFile){
 																localFile = defiler(localFile);   // defiler 
 																
 																return 1;		//Alhamdulilah SYN Successful
-																
+															return 3; 		//manque d'un ;
+																		
 															}else{
-																return 3; 		//manque d'un ;
-															}
+														}
 														}else{
 															return 3; 		//manque d'un ;
 														}
@@ -249,10 +249,10 @@ int Analyse_Syn_ecrire(Element * localFile){
 				}
 	
 			}else{
-					return 2;			//manque d'une parenthese ouvrante
+					return 0;			//manque d'une parenthese ouvrante
 			}
 		}else{
-			return 2;			//manque d'une parenthese ouvrante
+			return 0;			//manque d'une parenthese ouvrante
 		}
 		
 	}else{

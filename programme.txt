@@ -1,6 +1,8 @@
 algorithme
 debut :
 declaration
-variable c caractere ;
-c := 'B' ; 
-ecrire ( c ) ;
+variable a entier ;
+variable z entier ;
+
+lire ( a ) ;
+ecrire ( a ) ;
