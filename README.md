@@ -27,3 +27,5 @@ Starting from lexical analysis , Syntactic analysis, semantic analysis , semanti
 --> Print the value by ecrire ( ) function . <br/>
 --> Comparing values by si ( )  function . <br/>
 
+## Check the Video demontstrative
+<a href="https://www.youtube.com/watch?v=xmXJp1G0Q20&t=17s&ab_channel=IsmailForeveryone" > https://www.youtube.com/watch?v=xmXJp1G0Q20&t=17s&ab_channel=IsmailForeveryone</a>
