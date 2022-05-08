@@ -2,7 +2,7 @@
 
 this my school project  "creating new compiler By French language" " using The C language ,  <br/>
 that helps me understand how the compiler works. <br/>
-Starting from lexical analysis , Syntactic analysis, semantic analysis , semantic analysis  . <br/>
+Starting from lexical analysis , syntax analysis, semantic analysis , Interpretation . <br/>
 
 ### Syntaxe
 --> Declaration <br/>
