@@ -1,8 +1,4 @@
-# Creating new compiler By French language
-
-this my school project  "creating new compiler By French language" " using The C language ,  <br/>
-that helps me understand how the compiler works. <br/>
-Starting from lexical analysis , syntax analysis, semantic analysis , Interpretation . <br/>
+ Developed a compiler  by  a French language  keywords as a school project using C language. Gained a thorough understanding of the compilation process, including lexical analysis, syntax analysis, semantic analysis, and interpretation 
 
 ### Syntaxe
 --> Declaration <br/>
